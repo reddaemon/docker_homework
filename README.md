@@ -16,3 +16,18 @@
 3. В docker-compose необходимо сетевые настройки 2 разных интерфейса(bridge), 1 - для фронта, 2 - для бека с postgresql
 
 4.* Осущиствить сборку проекта самим docker-compose команда docker-compose build(при использовании этого подхода необходимо исключить 2 пункт из критерии оценки)
+
+
+## docker-compose and docker commands
+```
+docker-compose build
+```
+
+```
+docker-compose up -d
+```
+
+```
+docker exec backend python manage.py migrate
+```
+

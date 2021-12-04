@@ -25,7 +25,7 @@ SECRET_KEY = 'unen%+=v7wr#d%&rz@u&1n)2h)128&j0y2w&bk73r=03h(+!df'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['backend', 'localhost']
 
 
 # Application definition
@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS':
         ['django_filters.rest_framework.DjangoFilterBackend',
-                            'rest_framework.filters.SearchFilter']
+         'rest_framework.filters.SearchFilter']
 }
 
 CORS_ORIGIN_WHITELIST = [

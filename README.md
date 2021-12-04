@@ -19,15 +19,32 @@
 
 
 ## docker-compose and docker commands
+**Important:** You need linux machine or virtual machine
+
+### build
+
 ```
 docker-compose build
 ```
+
+### run containers
 
 ```
 docker-compose up -d
 ```
 
+### apply db migrations
 ```
 docker exec backend python manage.py migrate
 ```
+
+### add backend hostname to /etc/hosts file
+```
+sudo ./scripts/add_hostname.sh
+```
+### open in browser:
+```
+http://127.0.0.1:3000
+```
+
 

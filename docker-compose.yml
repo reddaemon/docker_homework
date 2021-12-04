@@ -17,8 +17,8 @@ services:
     container_name: "backend"
     networks:
       - app
-    ports:
-      - "8000:8000"
+#    ports:
+#      - "8000:8000"
   
   database:
     image: postgres:14-alpine

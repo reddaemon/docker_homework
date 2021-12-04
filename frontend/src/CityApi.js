@@ -1,28 +1,28 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8000/api/v1/lib/issue_city/';
+const API_URL = 'http://backend:8000/api/v1/lib/issue_city/';
 
 export default class CityManager {
 
-  getCities(){
+  getCities() {
     return axios.get(API_URL).then((response) => response.data);
   }
 
-  getCity(city){
+  getCity(city) {
     const url = API_URL + city + '/';
     return axios.get(url).then((response) => response.data);
   }
 
-  createCity(city){
+  createCity(city) {
     return axios.post(API_URL, city)
   }
 
-  updateCity(city){
+  updateCity(city) {
     const url = API_URL + city.pk + '/';
     return axios.patch(url, city)
   }
 
-  deleteCity(city){
+  deleteCity(city) {
     const url = API_URL + city.pk + '/';
     return axios.delete(url)
   }

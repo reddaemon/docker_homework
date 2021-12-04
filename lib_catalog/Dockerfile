@@ -1,8 +1,9 @@
 FROM python:3.9-alpine as base
 ENV PYTHONDONTWRITEBYTECODE 1
 
-COPY requirements.txt requirements.txt ./
-RUN apk add --update --nocache --virtual .build-deps \
+WORKDIR /
+COPY requirements.txt /requirements.txt
+RUN apk add --update --no-cache --virtual .build-deps \
     build-base \
     postgresql-dev \
     libffi-dev \
@@ -13,11 +14,11 @@ RUN apk add --update --nocache --virtual .build-deps \
     libxslt-dev \
     g++ \
     gcc \
-    && pip install --no-cache-dir -r requirements.txt \
+    && pip install --no-cache-dir -r /requirements.txt \
     && find /usr/local \
-        \( -type d -a -name test -o -name tests \) \
-        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
-        -exec rm -rf '{}' +
+    \( -type d -a -name test -o -name tests \) \
+    -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+    -exec rm -rf '{}' +
 
 FROM python:3.9-alpine
 RUN apk add --update --no-cache libpq libjpeg-turbo

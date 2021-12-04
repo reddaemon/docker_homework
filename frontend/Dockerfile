@@ -1,4 +1,4 @@
-FROM node:12-alpine as builder
+FROM node:16-alpine as builder
 WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm install --only=prod

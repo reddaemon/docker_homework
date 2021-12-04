@@ -21,6 +21,8 @@
 ## docker-compose and docker commands
 **Important:** You need linux machine or virtual machine
 
+You need create .env file with ```POSTGRES_PASSWORD``` variable in root, default value for backend keep in settings.py
+
 ### build
 
 ```

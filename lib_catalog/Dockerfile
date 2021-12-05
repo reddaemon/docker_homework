@@ -31,5 +31,5 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONPATH ${PYTHONPATH}:/app
 
 COPY . /app
-#ENTRYPOINT [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
+USER 1001
 ENTRYPOINT [ "gunicorn", "-w 4", "lib_catalog.wsgi:application", "-b 0.0.0.0:8000" ]

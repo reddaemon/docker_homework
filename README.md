@@ -46,7 +46,7 @@ sudo ./scripts/add_hostname.sh
 ```
 ### open in browser:
 ```
-http://127.0.0.1:3000
+http://localhost:3000
 ```
 
 
